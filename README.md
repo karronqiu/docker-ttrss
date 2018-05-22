@@ -10,10 +10,13 @@ This Dockerfile installs Tiny Tiny RSS (TT-RSS) with the following features:
 - Integrated [Feedly theme](https://github.com/levito/tt-rss-feedly-theme)
 - Integrated [FeedIron plugin](https://github.com/m42e/ttrss_plugin-feediron) to get modify feeds
 - Integrated [Mobilize plugin](https://github.com/sepich/tt-rss-mobilize) for using Readability, Instapaper + Google Mobilizer
+- Integrated [Mercury fulltext](https://github.com/HenryQW/mercury_fulltext) to get full text feeds
+- Integreated [Fever](git clone https://github.com/DigitalDJ/tinytinyrss-fever-plugin fever) to allow Fever compatible RSS clients to use Tiny Tiny RSS.
 - Optional: Self-signed 4096-bit RSA TLS certificate for accessing TT-RSS via https
+- Originally was based on [x86dev/docker-ttrss](https://github.com/x86dev/docker-ttrss)
 - Originally was based on [clue/docker-ttrss](https://github.com/clue/docker-ttrss)
 
-A ready-to-use Docker image is available at [Docker Hub](https://hub.docker.com/r/x86dev/docker-ttrss/)
+A ready-to-use Docker image is available at [Docker Hub](https://hub.docker.com/r/karronqiu/docker-ttrss/)
 
 Feel free to tweak this further to your likings.
 
@@ -164,6 +167,25 @@ minimum:
 ```bash
 # docker run -d --link ttrss-data:db --name ttrss x86dev/docker-ttrss
 ```
+
+### Running TTS-RSS via docker-compose
+
+Copy docker-compose.yml to desired folder, and modify it. Then use the following command to start or shutdown docker containers:
+
+```bash
+# docker-compose up -d
+# docker-compse down
+```
+
+### Configure Mercury fulltext
+1. Enable the plugin **mercury_fulltext** in **Preferences/Plugins**.
+2. Save your Mercury API key (apply for free [here](https://mercury.postlight.com/web-parser/) ) in the Mercury_fulltext settings under Feeds tab.
+3. Configure for feeds under Plugins tab of the Edit Feed window (you can right click your feed to get there).
+
+### Enable Fever plugin
+You must enable the option Enable API access in your Tiny Tiny RSS preferences, for every user that wants to use the Fever plugin.
+
+
 ## Useful stuff to know
 
 ### Single User mode

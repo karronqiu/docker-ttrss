@@ -65,7 +65,9 @@ setup_ttrss()
         fi
         git clone --depth=1 https://github.com/sepich/tt-rss-mobilize.git ${TTRSS_PATH}/plugins/mobilize
         git clone --depth=1 https://github.com/m42e/ttrss_plugin-feediron.git ${TTRSS_PATH}/plugins/feediron
+        git clone --depth=1 https://github.com/WangQiru/mercury_fulltext.git ${TTRSS_PATH}/plugins/mercury_fulltext
         git clone --depth=1 https://github.com/levito/tt-rss-feedly-theme.git ${TTRSS_PATH}/themes/feedly-git
+        git clone --depth=1 https://github.com/DigitalDJ/tinytinyrss-fever-plugin.git ${TTRSS_PATH}/plugins/fever
     fi
 
     # Add initial config.

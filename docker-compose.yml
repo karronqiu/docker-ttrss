@@ -1,0 +1,23 @@
+version: "3.6"
+services:
+  ttrss-data:
+    image: nornagon/postgres
+    container_name: ttrss-data
+    volumes:
+      - data:/var/lib/postgresql/data
+    restart: always
+
+  ttrss:
+    image: karronqiu/docker-ttrss
+    container_name: ttrss
+    ports:
+      - "8080:8080/tcp"
+      - "443:4433/tcp"
+    links:
+      - ttrss-data:db
+    environment:
+      - TTRSS_WITH_SELFSIGNED_CERT=1
+      - TTRSS_SELF_URL=http://localhost:8080/
+    restart: always
+volumes:
+  data:
