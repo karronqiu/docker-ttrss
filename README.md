@@ -239,4 +239,4 @@ the suffix `h` stands for hours, `m` for minutes and `s` for seconds.
 You think you have something which absolutely must be part of this container, implemented
 a cool new feature or fixed some nasty bug? Let me know and send me a git pull request.
 
-The repository can be found [here](https://github.com/x86dev/docker-ttrss).
+The repository can be found [here](https://github.com/karronqiu/docker-ttrss).
